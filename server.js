@@ -9,6 +9,7 @@ app.get('/', (req, res) => {
 io.on('connection', (socket) => {
     console.log('client connected');
     let channel = 'chat message';
+
     // Listen
     socket.on(channel, (msg) => {
         console.log('message:' + msg);
@@ -19,5 +20,5 @@ io.on('connection', (socket) => {
 });
 
 http.listen(3000, () => {
-    console.log('listening on *: 3000');
+    console.log('Server start on http://127.0.0.1:3000');
 });
